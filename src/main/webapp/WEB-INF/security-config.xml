@@ -17,6 +17,11 @@
 
 	<bean id="hdivFilter" class="org.hdiv.filter.ValidatorFilter" />
 
+	<!-- Our custom ValidatorErrorHandler for WIFC -->
+	<bean id="org.hdiv.filter.ValidatorErrorHandler" class="eu.swept.filter.WifcValidatorErrorHandler">
+		<property name="config" ref="org.hdiv.config.HDIVConfig"/>
+	</bean>
+
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
